@@ -1,0 +1,17 @@
+scalar Long
+type Department {
+    id: ID!
+    name: String!
+    employees: [Employee!]!
+}
+
+ type Query {
+    departments: [Department!]!
+    department(id: ID!): Department
+}
+
+  type Mutation {
+    createDepartment(name: String!): Department!
+    updateDepartment(id: ID!, name: String!): Department!
+    deleteDepartment(id: ID!): Boolean!
+}
